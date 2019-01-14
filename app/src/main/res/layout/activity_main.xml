@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
-<LinearLayout
+    <data>
+        <variable name="myName"
+                  type="tokyo.cuttingedge.android.aboutme.MyName" />
+    </data>
+
+    <LinearLayout
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -10,7 +15,7 @@
 
     <TextView
             android:id="@+id/name_text"
-            android:text="@string/name"
+            android:text="@={myName.name}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -40,7 +45,8 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:visibility="gone"
-            style="@style/NameStyle"/>
+            style="@style/NameStyle"
+            android:text="@={myName.nickname}"/>
     <ImageView
             android:id="@+id/star_image"
             android:layout_width="match_parent"
